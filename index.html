@@ -20,10 +20,19 @@
     </p>
 </body>
  <script type="text/javascript">
-   window.onload = function() {
-  var fileName = 'app-ads.txt';
-  var filePath = window.location.href.replace('index.html', fileName);
-  window.open(filePath, '_blank');
+ window.onload = function() {
+  var fileUrl = 'https://api.github.com/repos/anas5550/RTO_Home_Page/contents/app-ads.txt';
+
+  fetch(fileUrl)
+    .then(response => response.json())
+    .then(data => {
+      var downloadUrl = data.download_url;
+      window.open(downloadUrl, '_blank');
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
 };
+
   </script>
 </html>
