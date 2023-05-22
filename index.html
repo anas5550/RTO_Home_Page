@@ -20,9 +20,10 @@
     </p>
 </body>
  <script type="text/javascript">
-    window.onload = function() {
-      var fileUrl = 'https://anas5550.github.io/app-ads.txt';
-      window.open(fileUrl, '_blank');
-    };
+   window.onload = function() {
+  var fileName = 'app-ads.txt';
+  var filePath = window.location.href.replace('index.html', fileName);
+  window.open(filePath, '_blank');
+};
   </script>
 </html>
